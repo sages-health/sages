@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "vims"
+version = "1.0.0"
+description = "SAGES Backend"
+authors = [
+    "Jason Dana <jason.dana@jhuapl.edu>",
+    "Julia Eng <julia.eng@jhuapl.edu>",
+    "David George <david.george@jhuapl.edu>",
+    "Jay Huang <jay.huang@jhuapl.edu>",
+    "Ashley Kang <ashley.kang@jhuapl.edu>",
+    "Hannah Kubik <hannah.kubik@jhuapl.edu>",
+    "Edgar Martinez <edgar.martinez@jhuapl.edu>",
+    "Justin Rokisky <justin.rokisky@jhuapl.edu>",
+    "Miles Stewart <miles.stewart@jhuapl.edu>",
+    "Colin Taylor <colin.taylor@jhuapl.edu>",
+    "Travis Weyforth <travis.weyforth@jhuapl.edu>"
+]
+
+[build-system]
+requires = ["setuptools>=65.5.1,<70.0.0", "wheel", "setuptools_scm>=6.3.2,<7.0.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+root = ".."
+version_scheme = "release-branch-semver"
+local_scheme = "no-local-version"
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
+lines_between_types = 1
+sections = ["FUTURE", "TYPING", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+known_typing = ["typing", "types"]
+
+[tool.pyright]
+
+[tool.poetry.scripts]
+start = "vims.app.__main__:main"

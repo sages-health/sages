@@ -1,0 +1,223 @@
+/*!
+*  Copyright (c) 2013-2025. The Johns Hopkins University Applied Physics Laboratory LLC
+*
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* NO WARRANTY.   THIS MATERIAL IS PROVIDED "AS IS."  JHU/APL DISCLAIMS ALL
+* WARRANTIES IN THE MATERIAL, WHETHER EXPRESS OR IMPLIED, INCLUDING (BUT NOT
+* LIMITED TO) ANY AND ALL IMPLIED WARRANTIES OF PERFORMANCE,
+* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT OF
+* INTELLECTUAL PROPERTY RIGHTS. ANY USER OF THE MATERIAL ASSUMES THE ENTIRE
+* RISK AND LIABILITY FOR USING THE MATERIAL.  IN NO EVENT SHALL JHU/APL BE
+* LIABLE TO ANY USER OF THE MATERIAL FOR ANY ACTUAL, INDIRECT,
+* CONSEQUENTIAL, SPECIAL OR OTHER DAMAGES ARISING FROM THE USE OF, OR
+* INABILITY TO USE, THE MATERIAL, INCLUDING, BUT NOT LIMITED TO, ANY DAMAGES
+* FOR LOST PROFITS.
+ */
+
+// Quasar SCSS (& Sass) Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass/SCSS variables found in Quasar's source Sass/SCSS files.
+
+// Check documentation for full list of Quasar variables
+
+// Your own variables (that are declared here) and Quasar's own
+// ones will be available out of the box in your .vue/.scss/.sass files
+
+// It's highly recommended to change the default colors
+// to match your app's branding.
+// Tip: Use the "Theme Builder" on Quasar's documentation website.
+
+$grey:       hsl(184, 9%, 62%);
+$grey-1:     hsl(184, 9%, 97%);
+$grey-2:     hsl(184, 9%, 90%);
+$grey-3:     hsl(184, 9%, 83%);
+$grey-4:     hsl(184, 9%, 76%);
+$grey-5:     hsl(184, 9%, 69%);
+$grey-6:     hsl(184, 9%, 62%);
+$grey-7:     hsl(184, 9%, 55%);
+$grey-8:     hsl(184, 9%, 48%);
+$grey-9:     hsl(184, 9%, 41%);
+$grey-10:    hsl(184, 9%, 34%);
+$grey-11:    hsl(184, 9%, 27%);
+$grey-12:    hsl(184, 9%, 20%);
+$grey-13:    hsl(184, 9%, 13%);
+$grey-14:    hsl(184, 9%,  6%);
+
+$blue:       hsl(210, 29%, 24%);
+$blue-1:     hsl(210, 29%, 99%);
+$blue-2:     hsl(210, 29%, 84%);
+$blue-3:     hsl(210, 29%, 69%);
+$blue-4:     hsl(210, 29%, 54%);
+$blue-5:     hsl(210, 29%, 39%);
+$blue-6:     hsl(210, 29%, 24%);
+$blue-7:     hsl(210, 29%, 21%);
+$blue-8:     hsl(210, 29%, 18%);
+$blue-9:     hsl(210, 29%, 15%);
+$blue-10:    hsl(210, 29%, 12%);
+$blue-11:    hsl(210, 29%,  9%);
+$blue-12:    hsl(210, 29%,  6%);
+$blue-13:    hsl(210, 29%,  3%);
+$blue-14:    hsl(210, 29%,  0%);
+
+$indigo:     hsl(263, 90%, 51%);
+$indigo-1:   hsl(263, 90%, 96%);
+$indigo-2:   hsl(263, 90%, 87%);
+$indigo-3:   hsl(263, 90%, 78%);
+$indigo-4:   hsl(263, 90%, 69%);
+$indigo-5:   hsl(263, 90%, 60%);
+$indigo-6:   hsl(263, 90%, 51%);
+$indigo-7:   hsl(263, 90%, 45%);
+$indigo-8:   hsl(263, 90%, 39%);
+$indigo-9:   hsl(263, 90%, 33%);
+$indigo-10:  hsl(263, 90%, 27%);
+$indigo-11:  hsl(263, 90%, 21%);
+$indigo-12:  hsl(263, 90%, 15%);
+$indigo-13:  hsl(263, 90%,  9%);
+$indigo-14:  hsl(263, 90%,  3%);
+
+$purple:     hsl(261, 51%, 51%);
+$purple-1:   hsl(261, 51%, 96%);
+$purple-2:   hsl(261, 51%, 87%);
+$purple-3:   hsl(261, 51%, 78%);
+$purple-4:   hsl(261, 51%, 69%);
+$purple-5:   hsl(261, 51%, 60%);
+$purple-6:   hsl(261, 51%, 51%);
+$purple-7:   hsl(261, 51%, 45%);
+$purple-8:   hsl(261, 51%, 39%);
+$purple-9:   hsl(261, 51%, 33%);
+$purple-10:  hsl(261, 51%, 27%);
+$purple-11:  hsl(261, 51%, 21%);
+$purple-12:  hsl(261, 51%, 15%);
+$purple-13:  hsl(261, 51%,  9%);
+$purple-14:  hsl(261, 51%,  3%);
+
+$pink:       hsl(332, 79%, 58%);
+$pink-1:     hsl(332, 79%, 98%);
+$pink-2:     hsl(332, 79%, 90%);
+$pink-3:     hsl(332, 79%, 82%);
+$pink-4:     hsl(332, 79%, 74%);
+$pink-5:     hsl(332, 79%, 66%);
+$pink-6:     hsl(332, 79%, 58%);
+$pink-7:     hsl(332, 79%, 51%);
+$pink-8:     hsl(332, 79%, 44%);
+$pink-9:     hsl(332, 79%, 37%);
+$pink-10:    hsl(332, 79%, 31%);
+$pink-11:    hsl(332, 79%, 24%);
+$pink-12:    hsl(332, 79%, 17%);
+$pink-13:    hsl(332, 79%, 10%);
+$pink-14:    hsl(332, 79%,  3%);
+
+$red:        hsl(  6, 78%, 57%);
+$red-1:      hsl(  6, 78%, 97%);
+$red-2:      hsl(  6, 78%, 89%);
+$red-3:      hsl(  6, 78%, 81%);
+$red-4:      hsl(  6, 78%, 73%);
+$red-5:      hsl(  6, 78%, 65%);
+$red-6:      hsl(  6, 78%, 57%);
+$red-7:      hsl(  6, 78%, 50%);
+$red-8:      hsl(  6, 78%, 43%);
+$red-9:      hsl(  6, 78%, 36%);
+$red-10:     hsl(  6, 78%, 29%);
+$red-11:     hsl(  6, 78%, 22%);
+$red-12:     hsl(  6, 78%, 15%);
+$red-13:     hsl(  6, 78%,  8%);
+$red-14:     hsl(  6, 78%,  1%);
+
+$orange:     hsl( 27, 98%, 54%);
+$orange-1:   hsl( 27, 98%, 99%);
+$orange-2:   hsl( 27, 98%, 90%);
+$orange-3:   hsl( 27, 98%, 81%);
+$orange-4:   hsl( 27, 98%, 72%);
+$orange-5:   hsl( 27, 98%, 63%);
+$orange-6:   hsl( 27, 98%, 54%);
+$orange-7:   hsl( 27, 98%, 48%);
+$orange-8:   hsl( 27, 98%, 42%);
+$orange-9:   hsl( 27, 98%, 36%);
+$orange-10:  hsl( 27, 98%, 28%);
+$orange-11:  hsl( 27, 98%, 22%);
+$orange-12:  hsl( 27, 98%, 16%);
+$orange-13:  hsl( 27, 98%, 10%);
+$orange-14:  hsl( 27, 98%,  4%);
+
+$yellow:     hsl( 37, 90%, 51%);
+$yellow-1:   hsl( 37, 90%, 96%);
+$yellow-2:   hsl( 37, 90%, 87%);
+$yellow-3:   hsl( 37, 90%, 78%);
+$yellow-4:   hsl( 37, 90%, 69%);
+$yellow-5:   hsl( 37, 90%, 60%);
+$yellow-6:   hsl( 37, 90%, 51%);
+$yellow-7:   hsl( 37, 90%, 45%);
+$yellow-8:   hsl( 37, 90%, 39%);
+$yellow-9:   hsl( 37, 90%, 33%);
+$yellow-10:  hsl( 37, 90%, 27%);
+$yellow-11:  hsl( 37, 90%, 21%);
+$yellow-12:  hsl( 37, 90%, 15%);
+$yellow-13:  hsl( 37, 90%,  9%);
+$yellow-14:  hsl( 37, 90%,  3%);
+
+$green:      hsl(168, 77%, 42%);
+$green-1:    hsl(168, 77%, 97%);
+$green-2:    hsl(168, 77%, 86%);
+$green-3:    hsl(168, 77%, 75%);
+$green-4:    hsl(168, 77%, 64%);
+$green-5:    hsl(168, 77%, 53%);
+$green-6:    hsl(168, 77%, 42%);
+$green-7:    hsl(168, 77%, 37%);
+$green-8:    hsl(168, 77%, 32%);
+$green-9:    hsl(168, 77%, 27%);
+$green-10:   hsl(168, 77%, 22%);
+$green-11:   hsl(168, 77%, 17%);
+$green-12:   hsl(168, 77%, 12%);
+$green-13:   hsl(168, 77%,  7%);
+$green-14:   hsl(168, 77%,  2%);
+
+$teal:       hsl(162, 73%, 46%);
+$teal-1:     hsl(162, 73%, 96%);
+$teal-2:     hsl(162, 73%, 86%);
+$teal-3:     hsl(162, 73%, 76%);
+$teal-4:     hsl(162, 73%, 66%);
+$teal-5:     hsl(162, 73%, 56%);
+$teal-6:     hsl(162, 73%, 46%);
+$teal-7:     hsl(162, 73%, 41%);
+$teal-8:     hsl(162, 73%, 36%);
+$teal-9:     hsl(162, 73%, 31%);
+$teal-10:    hsl(162, 73%, 26%);
+$teal-11:    hsl(162, 73%, 21%);
+$teal-12:    hsl(162, 73%, 16%);
+$teal-13:    hsl(162, 73%, 11%);
+$teal-14:    hsl(162, 73%,  6%);
+
+$cyan:       hsl(204, 70%, 53%);
+$cyan-1:     hsl(204, 70%, 97%);
+$cyan-2:     hsl(204, 70%, 89%);
+$cyan-3:     hsl(204, 70%, 80%);
+$cyan-4:     hsl(204, 70%, 71%);
+$cyan-5:     hsl(204, 70%, 62%);
+$cyan-6:     hsl(204, 70%, 53%);
+$cyan-7:     hsl(204, 70%, 47%);
+$cyan-8:     hsl(204, 70%, 41%);
+$cyan-9:     hsl(204, 70%, 35%);
+$cyan-10:    hsl(204, 70%, 29%);
+$cyan-11:    hsl(204, 70%, 23%);
+$cyan-12:    hsl(204, 70%, 17%);
+$cyan-13:    hsl(204, 70%, 11%);
+$cyan-14:    hsl(204, 70%,  5%);
+
+$primary   : $blue;
+$secondary : $grey-6;
+$accent    : $purple;
+$dark      : $grey-7;
+$positive  : $green;
+$negative  : $red;
+$info      : $cyan;
+$warning   : $yellow;
+
+$body-font-size: 16px;
+$typography-font-family: 'Lato', 'Roboto', '-apple-system', 'Helvetica Neue', Helvetica, Arial, sans-serif;

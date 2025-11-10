@@ -1,0 +1,23 @@
+# macOS resource forks
+._*
+.DS_Store
+
+# Log files
+*.log
+
+# Node modules
+node_modules/
+
+frontend/cypress/screenshots/
+frontend/cypress/videos/
+
+.tool-versions
+.env
+.idea
+*.db
+
+docs/build
+out
+.vagrant
+backend/etl-data
+backend/mod-data

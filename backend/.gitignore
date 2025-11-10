@@ -1,0 +1,30 @@
+# General output directories
+dist/
+build/
+
+# Log files
+*.log
+
+*.sqlite
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+eggs/
+.eggs/
+wheels/
+sdist/
+parts/
+.pytest_cache/
+
+# Python virtual environment
+.venv/
+
+# Local configuration
+*.local.py
+
+# Database files
+data/

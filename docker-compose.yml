@@ -1,0 +1,64 @@
+version: "3.9"
+services:
+  backend:
+    networks:
+      - sagesnet
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    entrypoint: ["python", "-m", "vims.app"]
+    environment:
+      VIMS_BACKEND_PORT: 8084
+      VIMS_BACKEND_HOST: "backend"
+    restart: always
+    volumes:
+      - ./backend/app.config.docker.py:/configuration/app.config.py
+      - ./backend/configurations.json:/configuration/configurations.json
+      - ./backend/sages.db:/configuration/sages.db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "8084:8084"
+  postgres-vims:
+    image: postgres:15-bullseye
+    environment:
+      POSTGRES_USER: vims
+      POSTGRES_PASSWORD: vims
+      POSTGRES_DB: vims
+    networks:
+      - sagesnet
+    volumes:
+      - postgres_vims_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "vims"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
+  nginx:
+    networks:
+      - sagesnet
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    environment:
+      NGINX_ENVSUBST_TEMPLATE_SUFFIX: "${NGINX_TEMPLATE_SUFFIX:-.server_template}"
+      HTTP_PORT: 80
+      HTTPS_PORT: 443
+      VIMS_BACKEND_PORT: 8084
+      BACKEND_SERVICE_NAME: "backend"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/templates:/etc/nginx/templates
+      - ./nginx/certs:/etc/ssl/certs:ro
+    depends_on:
+      - backend
+    restart: always
+volumes:
+  postgres_vims_data:
+networks:
+  sagesnet:
+    name: sages_network
+

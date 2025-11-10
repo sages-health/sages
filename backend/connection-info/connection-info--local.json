@@ -1,0 +1,9 @@
+[
+  {
+    "type": "sql_alchemy",
+    "url": "sqlite:///sages.db",
+    "token": "5290479b-77bd-4bcc-a6b1-bb25eb5ba726",
+    "ssl": false,
+    "display_name": "SAGES Database"
+  }
+]

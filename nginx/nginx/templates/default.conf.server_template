@@ -1,0 +1,31 @@
+server {
+    listen ${HTTP_PORT} default_server;
+    listen [::]:${HTTP_PORT} default_server;
+    server_name _;
+    return 301 https://$host:${HTTPS_PORT}$request_uri;
+}
+
+server {
+    listen ${HTTPS_PORT} ssl http2;
+    server_name ${HOSTNAME};
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+
+    ssl_certificate /etc/ssl/certs/cert.crt;
+    ssl_certificate_key /etc/ssl/certs/cert.key;
+
+    root /usr/share/nginx/html;
+
+    charset utf-8;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api/ {
+        client_max_body_size 40M;
+
+        proxy_pass http://${BACKEND_SERVICE_NAME}:${VIMS_BACKEND_PORT}/api/;
+    }
+}

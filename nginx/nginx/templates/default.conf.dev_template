@@ -1,0 +1,19 @@
+server {
+    listen 80 default_server;
+    server_name ${HOSTNAME};
+
+    root /usr/share/nginx/html;
+
+    charset utf-8;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api/ {
+        client_max_body_size 40M;
+
+        proxy_pass http://host.docker.internal:8084/api/;
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "admin": {
+    "permissions": [
+      "admin"
+    ]
+  },
+  "developer": {
+    "permissions": [
+      "read_users",
+      "create_user",
+      "read_user",
+      "update_user",
+      "update_user_password",
+      "delete_user",
+      "read_roles"
+    ]
+  }
+}

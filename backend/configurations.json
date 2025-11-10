@@ -1,0 +1,39 @@
+{
+  "example_dataset": {
+    "title": "Example Data Set",
+    "filetype": "example_dataset",
+    "table": {
+      "name": "example_dataset",
+      "columns": {
+        "id": "string",
+        "date": "string",
+        "status": "string",
+        "age": "int",
+        "weight": "float"
+      }
+    },
+    "primary_key_columns": [
+      "id"
+    ],
+    "column_name_replacements": "all",
+    "col_rename": {},
+    "reader": "csv_or_excel",
+    "cast_cols": {
+      "weight": {
+        "func": "cast_float",
+        "default": null
+      }
+      "age": {
+        "func": "cast_int",
+        "default": null
+      }
+    },
+    "cell_value_replacements": [
+    ],
+    "date_cols": {
+      "rec": "%d/%m/%Y"
+    },
+    "reader_arguments": {},
+    "additional_transformations": []
+  }
+}

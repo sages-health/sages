@@ -1,0 +1,12 @@
+.venv
+.pytest_cache
+app.config.py
+Dockerfile.*
+*.egg-info
+data
+dist
+sfpd-incidents.sqlite
+connection-info/
+*.db
+mod-data
+etl-data

@@ -1,0 +1,19 @@
+server {
+    listen ${HTTP_PORT} default_server;
+    server_name ${HOSTNAME};
+
+    root /usr/share/nginx/html;
+
+    charset utf-8;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api/ {
+        client_max_body_size 40M;
+
+        proxy_pass http://${BACKEND_SERVICE_NAME}:${VIMS_BACKEND_PORT}/api/;
+    }
+}

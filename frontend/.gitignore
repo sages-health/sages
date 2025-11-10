@@ -1,0 +1,12 @@
+# Quasar core related directories
+.quasar
+/dist
+
+# Cordova related directories and files
+/src-cordova/platforms
+/src-cordova/plugins
+/src-cordova/www
+
+# Capacitor related directories and files
+/src-capacitor/www
+package-lock.json

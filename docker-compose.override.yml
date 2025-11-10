@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  backend:
+    deploy:
+      replicas: 0
+  nginx:
+#    Uncomment below if you plan on running the frontend dev server for frontend development.
+    deploy:
+      replicas: 0
+#    environment:
+#      HOSTNAME: "${HOSTNAME:-localhost}"
+#      NGINX_ENVSUBST_TEMPLATE_SUFFIX: "${NGINX_TEMPLATE_SUFFIX:-.dev_template}"
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - ./nginx/templates:/etc/nginx/templates
