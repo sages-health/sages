@@ -65,3 +65,10 @@ Config.set(
 )
 Config.set(Settings.ETL_PRIMARY_KEY_COLUMN_NAME, "vims_primary_key")
 Config.set(Settings.MOBILE_ETL_ENCRYPTION_KEY, "replaceme")
+Config.set(Settings.LOGIN_ATTEMPTS, 5)
+Config.set(Settings.LOGIN_LOCK_TIMEOUT_MINS, timedelta(minutes=15))
+Config.set(Settings.MAIL_SERVER_HOST, "mail.vims.com")
+Config.set(Settings.MAIL_SERVER_PORT, 25)
+Config.set(Settings.MAIL_SERVER_ADDRESS, "no-reply-vims@vims.com")
+Config.set(Settings.FRONTEND_BASE_URL, "http://127.0.0.1:8083")
+
