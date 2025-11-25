@@ -113,3 +113,7 @@ A password hashing tool is provided for generating hashed passwords for adding u
 ```bash
 python src/vims/tools/fernet.py encrypt $Settings.ENCRYPTION_KEYS $YOUR_PASSWORD
 ```
+
+## Building SAGES using Pyinstaller
+
+Run the `build_linux.sh` script in order to install dependencies, build the frontend JavaScript distribution, copy it to the Pyinstaller folder, and generate the executable. Be sure to include a .env file in 

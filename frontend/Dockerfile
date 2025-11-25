@@ -1,11 +1,10 @@
-FROM node:20-alpine as frontend
+FROM node:20-bookworm as frontend
 
-ADD ./frontend /js
+ADD . /js
 WORKDIR /js
-
-RUN npm install --loglevel verbose
-RUN npm config set timeout 600000
-RUN NODE_OPTIONS=--max_old_space_size=4096 npm run build
+RUN npm install -g @quasar/cli yarn
+RUN npm install
+RUN NODE_OPTIONS=--max_old_space_size=8192 npm run build
 
 FROM nginx:latest
 COPY --from=frontend /js/dist/spa /usr/share/nginx/html

@@ -17,10 +17,12 @@ ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 ENV SSL_CERT_DIR=/etc/ssl/certs/
 
 
-ADD backend /configuration
+ADD . /configuration
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1
 ENV PIP_NO_CACHE_DIR=1
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /configuration
 RUN SETUPTOOLS_SCM_PRETEND_VERSION_FOR_VIMS="1.0.0" pip install --default-timeout=200 -e .
+RUN echo "FERNET_KEY=$(python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())")" >> .env
+RUN echo "JWT_SECRET=$(python3 -c 'import secrets; print(secrets.token_urlsafe(64))')" >> .env

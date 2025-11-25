@@ -4,8 +4,8 @@ services:
     networks:
       - sagesnet
     build:
-      context: .
-      dockerfile: ./backend/Dockerfile
+      context: backend
+      dockerfile: ./Dockerfile
     entrypoint: ["python", "-m", "vims.app"]
     environment:
       VIMS_BACKEND_PORT: 8084
@@ -19,28 +19,12 @@ services:
       - "host.docker.internal:host-gateway"
     ports:
       - "8084:8084"
-  postgres-vims:
-    image: postgres:15-bullseye
-    environment:
-      POSTGRES_USER: vims
-      POSTGRES_PASSWORD: vims
-      POSTGRES_DB: vims
-    networks:
-      - sagesnet
-    volumes:
-      - postgres_vims_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "vims"]
-      interval: 10s
-      retries: 5
-      start_period: 5s
-    restart: always
   nginx:
     networks:
       - sagesnet
     build:
-      context: .
-      dockerfile: frontend/Dockerfile
+      context: frontend
+      dockerfile: Dockerfile
     environment:
       NGINX_ENVSUBST_TEMPLATE_SUFFIX: "${NGINX_TEMPLATE_SUFFIX:-.server_template}"
       HTTP_PORT: 80

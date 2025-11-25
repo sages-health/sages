@@ -27,6 +27,10 @@ from cryptography.fernet import Fernet
 from vims.app.settings import Settings
 from vims.core import Config
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
 Config.set(Settings.ENVIRONMENT, "production")
 Config.set(
     Settings.HOST,
@@ -45,12 +49,13 @@ Config.set(Settings.DATABASE_NAME, "vims")
 Config.set(Settings.TOKEN_EXPIRES, timedelta(minutes=60))
 Config.set(
     Settings.JWT_SECRET_KEY,
+    os.environ.get("JWT_SECRET")
 )
 Config.set(Settings.JWT_ALGORITHM, "HS256")
 Config.set(
     Settings.ENCRYPTION_KEYS,
     [
-        # Fernet(b""),
+        Fernet(os.environ.get("FERNET_KEY").encode())
     ],
 )
 Config.set(Settings.ETL_DATA_FOLDER, "/etl-data")

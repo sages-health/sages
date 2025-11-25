@@ -104,8 +104,11 @@ def base(
         secure_headers.framework.fastapi(response)
         return response
 
+    logging.info(f"RUN MODE: {config.get(Settings.RUN_MODE)}")
+
     if config.get(Settings.RUN_MODE) == "standalone":
         base.mount("/", StaticFiles(directory="dist", html=True), name="dist")
+        logging.info("Running in standalone")
 
     @base.get("/api/.*", status_code=404, include_in_schema=False)
     def invalid_api():
