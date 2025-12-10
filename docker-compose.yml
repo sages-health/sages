@@ -13,6 +13,7 @@ services:
     restart: always
     volumes:
       - ./backend/app.config.docker.py:/configuration/app.config.py
+      - ./backend/sages.db:/configuration/sages.db
       - ./backend/configurations.json:/configuration/configurations.json
       - ./backend/sages.db:/configuration/sages.db
     extra_hosts:
@@ -26,7 +27,7 @@ services:
       context: frontend
       dockerfile: Dockerfile
     environment:
-      NGINX_ENVSUBST_TEMPLATE_SUFFIX: "${NGINX_TEMPLATE_SUFFIX:-.server_template}"
+      NGINX_ENVSUBST_TEMPLATE_SUFFIX: "default.conf.server_template"
       HTTP_PORT: 80
       HTTPS_PORT: 443
       VIMS_BACKEND_PORT: 8084

@@ -26,3 +26,4 @@ WORKDIR /configuration
 RUN SETUPTOOLS_SCM_PRETEND_VERSION_FOR_VIMS="1.0.0" pip install --default-timeout=200 -e .
 RUN echo "FERNET_KEY=$(python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())")" >> .env
 RUN echo "JWT_SECRET=$(python3 -c 'import secrets; print(secrets.token_urlsafe(64))')" >> .env
+RUN echo "VIMS_DATABASE_URL=sqlite+aiosqlite:///sages.db" >> .env

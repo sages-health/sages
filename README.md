@@ -18,6 +18,23 @@
 
 ---
 
+### Production Deployment
+
+#### Docker (Preferred)
+
+Run the `init_db.sh` script to initialize the database. The script will output the admin password to the `init.log` file.
+
+Run `docker compose -f docker-compose.yml up` to build and deploy the containers. The certificates to be used with the deployment need to be copied to the `nginx/certs` folder under `cert.crt` and `cert.key`.
+
+If you have a custom `configurations.json` for file ETL, put it in the `backend` folder and overwrite any existing version of the file.
+
+#### PyInstaller
+
+Run the build_linux.sh script in the `backend` folder. This is primarily meant for running behind a reverse proxy.
+
+
+---
+
 ### Running on Different Environments
 * The dockerization of the application services allows for flexible runtime.
 * In general only a few changes need to be made to ensure a functioning system:
