@@ -227,7 +227,7 @@ async def user(password: PasswordContext = Inject(password)):
         user = await database.fetch_one(query)
         if user is None:
             raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid user"
+                status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid username or password"
             )
         user = UserInternalPassword.from_orm(user)
 
